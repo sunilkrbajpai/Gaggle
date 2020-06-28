@@ -7,43 +7,43 @@ This is a node project which consists of Authentication modules like passport.js
 
 -assets\
     &emsp;--css\
-    &emsp;&emsp;---footer.css
-    &emsp;&emsp;---header.css
-        &emsp;&emsp;---home.css
-        &emsp;&emsp;---layout.css
-        &emsp;&emsp;---resetPassword.css
-        &emsp;&emsp;---user_profile.css
-        &emsp;&emsp;---user_sign_in.css
-    --images\
-    --js\
-        ---sign-in.js
+    &emsp;&emsp;---footer.css\
+    &emsp;&emsp;---header.css\
+        &emsp;&emsp;---home.css\
+        &emsp;&emsp;---layout.css\
+        &emsp;&emsp;---resetPassword.css\
+        &emsp;&emsp;---user_profile.css\
+        &emsp;&emsp;---user_sign_in.css\
+    &emsp;--images\
+    &emsp;--js\
+        &emsp;&emsp;---sign-in.js\
 -config\
-    --middleware.js
-    --mongoose.js
-    --nodemailer.js
-    --passport-google-oauth2-strategy.js
-    --passport-local-strategy.js
+    &emsp;--middleware.js\
+    &emsp;--mongoose.js\
+    &emsp;--nodemailer.js\
+    &emsp;--passport-google-oauth2-strategy.js\
+    &emsp;--passport-local-strategy.js\
 -controllers\
-    --home_controller.js
-    --users_controller.js
+    &emsp;--home_controller.js\
+    &emsp;--users_controller.js\
 -mailers\
-    --login_mailers.js
-    --reset_mailer.js
+    &emsp;--login_mailers.js\
+    &emsp;--reset_mailer.js\
 -models\
-    --user.js
+    &emsp;--user.js\
 -routes\
-    --index.js
-    --users.js
+    &emsp;--index.js\
+    &emsp;--users.js\
 -views\
-    --_footer.ejs
-    --_header.ejs
-    --forgot_password.ejs
-    --home.ejs
-    --layout.ejs
-    --sendMail.ejs
-    --user_profile.ejs
-    --user_sign_in.ejs
-    --user_sign_up.ejs
+    &emsp;--_footer.ejs\
+    &emsp;--_header.ejs\
+    &emsp;--forgot_password.ejs\
+    &emsp;--home.ejs\
+    &emsp;--layout.ejs\
+    &emsp;--sendMail.ejs\
+    &emsp;--user_profile.ejs\
+    &emsp;--user_sign_in.ejs\
+    &emsp;--user_sign_up.ejs\
 -index.js
 -package.lock.json
 -package.json
