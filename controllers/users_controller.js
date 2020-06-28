@@ -1,6 +1,7 @@
 const User=require('../models/user');
 const crypto=require('crypto');
 const resetMailers=require('../mailers/reset_mailer');
+const loginMailer=require('../mailers/login_mailers');
 
 module.exports.profile=function(req,res){
     return res.render('user_profile',{
@@ -11,8 +12,8 @@ module.exports.profile=function(req,res){
 //create session for user using PASSPORT
 module.exports.createSession=function(req,res)
 {
-    // const user=User.findById({email:req.body.email});
-    // console.log(user);
+    req.flash('success','Signed In successfully!')
+    loginMailer.newLogin(req.user);
     return res.redirect('/');
 }
 
@@ -62,6 +63,7 @@ module.exports.create=function(req,res)
 
 module.exports.destroy=function(req,res){
     req.logout();
+    req.flash('success','Signed out successfully!')
     return res.redirect('/');
 }
 
@@ -70,11 +72,13 @@ module.exports.changePwd=function(req,res)
     // console.log(req.user.password);
     if(req.body.new_pass!=req.body.confirm_pass)
     {
+        req.flash('error','Password and confirm password should match!');
         return res.redirect('back');
     }
     if(req.user.password!=req.body.old_pass)
     {
         //not match password
+        req.flash('error','Password is wrong!');
         return res.redirect('back');
     }
     else{
@@ -82,8 +86,11 @@ module.exports.changePwd=function(req,res)
         updatedStatus.password=req.body.new_pass;
         User.findByIdAndUpdate(req.user._id, updatedStatus, function(err, updatedData){
             if(err){ console.log(err)}
-             else { console.log("Password Updated!")}
+             else { 
+                 console.log("Password Updated!")
+                }
         })
+        req.flash('success','Password changed!');
         return res.redirect('back');
 
     }
@@ -109,7 +116,10 @@ module.exports.reset=function(req,res){
 
         User.findByIdAndUpdate(user._id, updatedStatus, function(err, updatedData){
             if(err){ console.log(err)}
-             else { console.log("New Password Generated!")}
+             else { 
+                 console.log("New Password Generated!");
+                 req.flash('success','New password sent to email');
+                }
         })
 
         //send mail to user a new password
@@ -119,7 +129,8 @@ module.exports.reset=function(req,res){
                     title:'Gaggle | Reset password'
                 });
         }else{
-            console.log('Invalid Email!');
+            // console.log('Invalid Email!');
+            req.flash('error','Email not registered!')
             return res.redirect('back');
         }
     })

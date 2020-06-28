@@ -10,6 +10,8 @@ const passportLocal=require('./config/passport-local-strategy');
 const Mongostore=require('connect-mongo')(session);
 const cookieParser=require('cookie-parser');
 const googlePassport=require('./config/passport-google-oauth2-strategy');
+const flash=require('connect-flash');
+const middleware=require('./config/middleware');
 app.use(express.urlencoded());
 app.use(cookieParser());
 
@@ -46,7 +48,8 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use(passport.setAuthUser);
-
+app.use(flash());
+app.use(middleware.setFlash);
 //use express router
 app.use('/',require('./routes'));
 
