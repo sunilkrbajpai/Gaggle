@@ -9,6 +9,8 @@ module.exports.profile=function(req,res){
 //create session for user using PASSPORT
 module.exports.createSession=function(req,res)
 {
+    // const user=User.findById({email:req.body.email});
+    // console.log(user);
     return res.redirect('/');
 }
 
@@ -59,4 +61,28 @@ module.exports.create=function(req,res)
 module.exports.destroy=function(req,res){
     req.logout();
     return res.redirect('/');
+}
+
+module.exports.changePwd=function(req,res)
+{
+    // console.log(req.user.password);
+    if(req.body.new_pass!=req.body.confirm_pass)
+    {
+        return res.redirect('back');
+    }
+    if(req.user.password!=req.body.old_pass)
+    {
+        //not match password
+        return res.redirect('back');
+    }
+    else{
+        let updatedStatus = req.user;
+        updatedStatus.password=req.body.new_pass;
+        User.findByIdAndUpdate(req.user._id, updatedStatus, function(err, updatedData){
+            if(err){ console.log(err)}
+             else { console.log("Password Updated!")}
+        })
+        return res.redirect('back');
+
+    }
 }

@@ -3,3 +3,10 @@
 </h3>
 <p>NAME: <%=user.name%></p>
 <p>EMAIL: <%=user.email%></p>
+
+<form action="/users/changePwd" method="POST">
+<input type="password" name="old_pass" placeholder="Old Password" required><br>
+<input type="password" name="new_pass" placeholder="New Password" required><br>
+<input type="password" name="confirm_pass" placeholder="Confirm new Password" required><br>
+<input type="submit" value="Change Password"><br>
+</form>
