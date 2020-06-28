@@ -1,5 +1,8 @@
 const nodemailer=require('../config/nodemailer');
 
+// This is used to send mail to user using new login to alert him/her
+
+
 //this is another way of exporting
 exports.newLogin=(user)=>{
     // console.log('Inside newComment mailer',user);
