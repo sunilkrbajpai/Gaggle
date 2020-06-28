@@ -6,14 +6,14 @@ This is a node project which consists of Authentication modules like passport.js
 # Project Structure:--
 
 -assets\
-    --css\
-        ---footer.css
-        ---header.css
-        ---home.css
-        ---layout.css
-        ---resetPassword.css
-        ---user_profile.css
-        ---user_sign_in.css
+    &emsp;--css\
+    &emsp;&emsp;---footer.css
+    &emsp;&emsp;---header.css
+        &emsp;&emsp;---home.css
+        &emsp;&emsp;---layout.css
+        &emsp;&emsp;---resetPassword.css
+        &emsp;&emsp;---user_profile.css
+        &emsp;&emsp;---user_sign_in.css
     --images\
     --js\
         ---sign-in.js
