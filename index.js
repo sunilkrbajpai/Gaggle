@@ -12,6 +12,9 @@ const cookieParser=require('cookie-parser');
 const googlePassport=require('./config/passport-google-oauth2-strategy');
 const flash=require('connect-flash');
 const middleware=require('./config/middleware');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
+
 app.use(express.urlencoded());
 app.use(cookieParser());
 

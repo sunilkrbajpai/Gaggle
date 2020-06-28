@@ -1,6 +1,8 @@
 const passport=require('passport');
 const LocalStrategy=require('passport-local').Strategy;
 const User=require('../models/user');
+const bcrypt = require('bcrypt');
+const saltRounds = 10;
 
 //authentication using passport 
 passport.use(new LocalStrategy({
@@ -15,17 +17,19 @@ function(req,email,password,done)
             console.log('Error in finding user ----> passport');
             req.flash('error','Error in finding User!!')
             return;
-    }
-    if(!user || user.password!=password)
-    {
-        console.log('Invalid Username/password');
-        req.flash('error','Invalid Email/Password')
+        }
+        bcrypt.compare(password, user.password, function(err, result) {
+            // result == true
+            if(!user || !result)
+            {
+                console.log('Invalid Username/password');
+                req.flash('error','Invalid Email/Password')
 
-        return done(null,false);
-    }
-    return done(null,user);
-    })
-
+                return done(null,false);
+            }
+            return done(null,user);
+        })
+    });
 }
 ));
 
