@@ -6,20 +6,21 @@ const db=require('./config/mongoose');
 //used for session cookie
 const session=require('express-session');
 const passport=require('passport');
-const passportLocal=require('./config/passport-local-strategy');
-const Mongostore=require('connect-mongo')(session);
-const cookieParser=require('cookie-parser');
-const googlePassport=require('./config/passport-google-oauth2-strategy');
-const flash=require('connect-flash');
-const middleware=require('./config/middleware');
-const bcrypt = require('bcrypt');
-const saltRounds = 10;
+// imported modules
+const passportLocal=require('./config/passport-local-strategy');            //for local authentication
+const Mongostore=require('connect-mongo')(session);                         //for storing session
+const cookieParser=require('cookie-parser');                                //for parsing cookie
+const googlePassport=require('./config/passport-google-oauth2-strategy');   //for google auth
+const flash=require('connect-flash');                                       //for showing flash messages
+const middleware=require('./config/middleware');                            //for flash
+const bcrypt = require('bcrypt');                                           //for encrypting the password
 
 app.use(express.urlencoded());
 app.use(cookieParser());
 
-app.use(express.static('./assets'));
-app.use(expressLayouts);
+app.use(express.static('./assets'));                                           //set up static folder
+app.use(expressLayouts);                                                        //use expressLayouts
+
 //extract styles and scripts from sub pages
 app.set('layout extractStyles',true);
 app.set('layout extractScripts',true);
@@ -47,15 +48,21 @@ app.use(session({
     )
 }))
 
+//initialize passport and create session
 app.use(passport.initialize());
 app.use(passport.session());
 
+//set authentication
 app.use(passport.setAuthUser);
+
+//use flash module
 app.use(flash());
 app.use(middleware.setFlash);
+
 //use express router
 app.use('/',require('./routes'));
 
+//run server
 app.listen(port,function(err)
 {
     if(err){

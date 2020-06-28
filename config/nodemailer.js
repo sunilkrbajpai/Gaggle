@@ -1,7 +1,8 @@
-const nodemailer=require('nodemailer');
+const nodemailer=require('nodemailer');   //require nodemailer module
 const ejs=require('ejs');
 const path=require('path');
 
+//set transporter
 let transporter=nodemailer.createTransport({
     service:'gmail',
     host:'smtp.gmail.com',
@@ -10,10 +11,10 @@ let transporter=nodemailer.createTransport({
     auth:{
         user:'skb.tuts@gmail.com',              // put your email here
         pass:'5210584SkB?'                      //put your password here
-        
     }
 });
 
+//render email template
 let renderTemplate=(data,relativePath)=>{
     let mailHTML;
     ejs.renderFile(
@@ -27,6 +28,7 @@ let renderTemplate=(data,relativePath)=>{
     return mailHTML;
 }
 
+// exports nodemailer
 module.exports={
     transporter:transporter,
     renderTemplate:renderTemplate

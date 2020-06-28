@@ -1,7 +1,7 @@
-const passport=require('passport');
-const LocalStrategy=require('passport-local').Strategy;
+const passport=require('passport');                         //rwquire passport
+const LocalStrategy=require('passport-local').Strategy;     //require passport local
 const User=require('../models/user');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcrypt');                           //use bcrypt
 const saltRounds = 10;
 
 //authentication using passport 
@@ -69,4 +69,5 @@ passport.setAuthUser=function(req,res,next)
     next();
 }
 
+// export
 module.exports=passport;
