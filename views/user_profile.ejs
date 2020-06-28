@@ -1,3 +1,6 @@
+<!-- This is the profile page -->
+
+<!-- linked css -->
 <link rel="stylesheet" href="/css/user_profile.css">
 
 <div id="sign_in_box">
@@ -7,9 +10,11 @@
 
 <div id="box">
 
+    <!-- show user details -->
 <p>NAME: <%=user.name%></p>
 <p>EMAIL: <%=user.email%></p>
 
+<!-- form for changing the user password -->
 <form action="/users/changePwd" method="POST">
 <input type="password" name="old_pass" placeholder="Old Password" required><br><br>
 <input type="password" name="new_pass" placeholder="New Password" required><br><br>

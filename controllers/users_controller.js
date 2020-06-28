@@ -50,6 +50,7 @@ module.exports.create=function(req,res)
 
     if(req.body.password!=req.body.confirm_pwd)
     {
+        req.flash('error','Password and confirm password should match!')
         return res.redirect('back');
     }
     User.findOne({email:req.body.email},function(err,user){
@@ -85,7 +86,6 @@ module.exports.destroy=function(req,res){
 
 module.exports.changePwd=function(req,res)
 {
-    // console.log(req.user.password);
     if(req.body.new_pass!=req.body.confirm_pass)
     {
         req.flash('error','Password and confirm password should match!');
@@ -118,25 +118,6 @@ module.exports.changePwd=function(req,res)
         }
     });
 
-    
-    // if(req.user.password!=req.body.old_pass)
-    // {
-    //     //not match password
-        
-    // }
-    // else{
-    //     let updatedStatus = req.user;
-    //     updatedStatus.password=req.body.new_pass;
-    //     User.findByIdAndUpdate(req.user._id, updatedStatus, function(err, updatedData){
-    //         if(err){ console.log(err)}
-    //          else { 
-    //              console.log("Password Updated!")
-    //             }
-    //     })
-    //     req.flash('success','Password changed!');
-    //     return res.redirect('back');
-
-    // }
 }
 
 module.exports.forgotPassword=function(req,res){

@@ -1,26 +1,27 @@
+<!-- This is the main layout page -->
+
 <html>
     <head>
+        <!-- title -->
         <title><%=title%></title>
+        <!-- linked css and js -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css">
         <link rel="stylesheet" href="/css/layout.css">
         <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
         <%-style%>
     </head>
     <body>
-
+        <!-- include header -->
         <%-include('_header');%>
-        <!-- <%if(flash.success && flash.success.length>0){%>
-            <h5><%=flash.success%></h5>
-        <%}%> -->
 
-            <!-- noty flash message -->
-
-
+        <!-- body content -->
         <%-body%>
         
+        <!-- inlcude footer -->
         <%-include('_footer');%>
         <%-script%>
 
+        <!-- this script is used for showing the flash message on page -->
         <script>
             <%if(flash.success && flash.success.length>0){%>
                 new Noty({

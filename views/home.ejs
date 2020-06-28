@@ -1,9 +1,12 @@
+<!-- linked css -->
 <link rel="stylesheet" href="/css/home.css">
 
-
+<!-- if user not exists -->
 <% if (!locals.user){ %>
 
 <h1>Please Sign Up/Sign-In to your account!</h1>
 <%}else{%>
+
+    <!-- if user exists -->
     <h1>Congratulations, You are logged in please visit to your profile page.</h1>
 <%}%>
