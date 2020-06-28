@@ -56,13 +56,13 @@ This is a node project which consists of Authentication modules like passport.js
 3. Run the Mongo Server.
 4. Navigate to Project Directory by :
 
-    cd gaggle
+    > cd gaggle
 
 5. Run command:
 
-    npm install 
+    > npm install 
 
-    npm start or node index.js
+    > npm start or node index.js
 
 6. Go to: config >> nodemailer.js
 7. On line no. (12,13) >> set user: as your gmail id && pass: as gmail password
