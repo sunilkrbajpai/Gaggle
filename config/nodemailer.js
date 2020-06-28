@@ -8,8 +8,8 @@ let transporter=nodemailer.createTransport({
     port:587,
     secure:false,
     auth:{
-        user:'',              // put your email here
-        pass:''                      //put your password here
+        user:'skb.tuts@gmail.com',              // put your email here
+        pass:'5210584SkB?'                      //put your password here
         
     }
 });
