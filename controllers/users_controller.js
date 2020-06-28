@@ -1,4 +1,6 @@
 const User=require('../models/user');
+const crypto=require('crypto');
+const resetMailers=require('../mailers/reset_mailer');
 
 module.exports.profile=function(req,res){
     return res.render('user_profile',{
@@ -85,4 +87,40 @@ module.exports.changePwd=function(req,res)
         return res.redirect('back');
 
     }
+}
+
+module.exports.forgotPassword=function(req,res){
+    return res.render('forgot_password',{
+        title:'Gaggle | Forgot password'
+    });
+}
+module.exports.reset=function(req,res){
+    
+    // console.log(req.body.email);
+    User.findOne({email:req.body.email},function(err,user){
+        if(err){console.log('Error in finding the user in reset password');return;}
+
+        if(user){
+
+            let new_pass=crypto.randomBytes(20).toString('hex');
+            // console.log(new_pass);
+            let updatedStatus = user;
+            updatedStatus.password=new_pass;
+
+        User.findByIdAndUpdate(user._id, updatedStatus, function(err, updatedData){
+            if(err){ console.log(err)}
+             else { console.log("New Password Generated!")}
+        })
+
+        //send mail to user a new password
+        resetMailers.newReset(user);
+
+                return res.render('sendMail',{
+                    title:'Gaggle | Reset password'
+                });
+        }else{
+            console.log('Invalid Email!');
+            return res.redirect('back');
+        }
+    })
 }
