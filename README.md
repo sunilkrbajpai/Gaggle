@@ -5,8 +5,8 @@ This is a node project which consists of Authentication modules like passport.js
 
 # Project Structure:--
 
--assets/<br>
-    --css/
+-assets\
+    --css\
         ---footer.css
         ---header.css
         ---home.css
@@ -14,27 +14,27 @@ This is a node project which consists of Authentication modules like passport.js
         ---resetPassword.css
         ---user_profile.css
         ---user_sign_in.css
-    --images/
-    --js/
+    --images\
+    --js\
         ---sign-in.js
--config/
+-config\
     --middleware.js
     --mongoose.js
     --nodemailer.js
     --passport-google-oauth2-strategy.js
     --passport-local-strategy.js
--controllers/
+-controllers\
     --home_controller.js
     --users_controller.js
--mailers/
+-mailers\
     --login_mailers.js
     --reset_mailer.js
--models/
+-models\
     --user.js
--routes/
+-routes\
     --index.js
     --users.js
--views/
+-views\
     --_footer.ejs
     --_header.ejs
     --forgot_password.ejs
