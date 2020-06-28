@@ -5,7 +5,7 @@ This is a node project which consists of Authentication modules like passport.js
 
 # Project Structure:--
 
--assets/
+-assets/<br>
     --css/
         ---footer.css
         ---header.css
