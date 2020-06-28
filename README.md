@@ -44,9 +44,9 @@ This is a node project which consists of Authentication modules like passport.js
     &emsp;--user_profile.ejs\
     &emsp;--user_sign_in.ejs\
     &emsp;--user_sign_up.ejs\
--index.js
--package.lock.json
--package.json
+-index.js\
+-package.lock.json\
+-package.json\
 -README
 
 # How to setup project
