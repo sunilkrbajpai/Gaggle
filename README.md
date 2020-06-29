@@ -64,4 +64,8 @@ This is a node project which consists of Authentication modules like passport.js
 
     > npm start or node index.js
 
-6. Go to (.env):\&emsp; Enter your Client Id\&emsp; Enter Client_secret\&emsp; Enter your Gmail Id\&emsp; Enter your Gmail Password
+6. Go to (.env):\
+&emsp;CLIENT_ID= Enter your Client Id\
+&emsp;CLIENT_SECRET= Enter Client_secret\
+&emsp;EMAIL= Enter your Gmail Id\
+&emsp;PASSWORD= Enter your Gmail Password
