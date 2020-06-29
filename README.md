@@ -77,5 +77,6 @@ This is a node project which consists of Authentication modules like passport.js
 <img src="https://user-images.githubusercontent.com/25504941/85971701-818a5080-b9eb-11ea-848f-03db366fb17b.png" height=700>
 
 
-
-Thanks! Feel free to improve the code
+\
+\
+Thanks! Feel free to improve the code :smile:	
