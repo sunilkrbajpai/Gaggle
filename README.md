@@ -78,5 +78,4 @@ This is a node project which consists of Authentication modules like passport.js
 
 
 \
-\
 Thanks! Feel free to improve the code :smile:	
