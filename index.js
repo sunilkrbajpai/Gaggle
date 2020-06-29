@@ -17,7 +17,7 @@ const bcrypt = require('bcrypt');                                           //fo
 require('dotenv').config();                                                 //configure dotenv for ENv VARIABLES
 
 
-console.log(process.env);
+//console.log(process.env);
 app.use(express.urlencoded());
 app.use(cookieParser());
 
