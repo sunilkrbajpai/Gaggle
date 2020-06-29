@@ -4,12 +4,13 @@ const crypto=require('crypto');                                          //requi
 const User=require('../models/user');
 const bcrypt = require('bcrypt');                                           //for encrypting password
 const saltRounds = 10;
+require('dotenv').config();                                                 //configure dotenv for ENv VARIABLES
 
 //tell passport to use a new strategy for google login
 passport.use(new googleStrategy({
     // google auth credemntials
-    clientID:"832327032923-i3jpnns77m6u4e77g5emt8rkcjto56bd.apps.googleusercontent.com",
-    clientSecret:"-cUKZ4mFGGCNCspJhAawYJ6P",
+    clientID:process.env.CLIENT_ID,
+    clientSecret:process.env.CLIENT_SECRET,
     callbackURL:"http://localhost:8000/users/auth/google/callback",
 },
 function(accessToken,refreshToken,profile,done)

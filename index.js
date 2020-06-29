@@ -14,7 +14,10 @@ const googlePassport=require('./config/passport-google-oauth2-strategy');   //fo
 const flash=require('connect-flash');                                       //for showing flash messages
 const middleware=require('./config/middleware');                            //for flash
 const bcrypt = require('bcrypt');                                           //for encrypting the password
+require('dotenv').config();                                                 //configure dotenv for ENv VARIABLES
 
+
+console.log(process.env);
 app.use(express.urlencoded());
 app.use(cookieParser());
 
