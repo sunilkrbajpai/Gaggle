@@ -64,5 +64,4 @@ This is a node project which consists of Authentication modules like passport.js
 
     > npm start or node index.js
 
-6. Go to: config >> nodemailer.js
-7. On line no. (12,13) >> set user: as your gmail id && pass: as gmail password
+6. Go to (.env):\&emsp; Enter your Client Id\&emsp; Enter Client_secret\&emsp; Enter your Gmail Id\&emsp; Enter your Gmail Password
