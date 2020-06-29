@@ -72,7 +72,10 @@ This is a node project which consists of Authentication modules like passport.js
 
 7. For getting Client_ID and Client_secret, goto https://console.developers.google.com/ and register new credentials for OAuth 2.0.
 
-8. During Registering credentials for oAuth: fill 
+8. During Registering credentials for oAuth: fill (Authorized JavaScript origins) and (Authorized redirect URIs ) as shown in image.
 
-<center>
-<img src="https://user-images.githubusercontent.com/25504941/85971701-818a5080-b9eb-11ea-848f-03db366fb17b.png" height=500></center>
+<img src="https://user-images.githubusercontent.com/25504941/85971701-818a5080-b9eb-11ea-848f-03db366fb17b.png" height=700>
+
+
+
+Thanks! Feel free to improve the code
