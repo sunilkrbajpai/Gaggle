@@ -74,7 +74,7 @@ This is a node project which consists of Authentication modules like passport.js
 
 8. During Registering credentials for oAuth: fill (Authorized JavaScript origins) and (Authorized redirect URIs ) as shown in image.
 
-<img src="https://user-images.githubusercontent.com/25504941/85971701-818a5080-b9eb-11ea-848f-03db366fb17b.png" height=700>
+<img src="https://user-images.githubusercontent.com/25504941/85972528-e0e96000-b9ed-11ea-965d-37d612f3cb14.png" height=700>
 
 
 \
