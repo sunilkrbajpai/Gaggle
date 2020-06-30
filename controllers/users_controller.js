@@ -70,6 +70,8 @@ module.exports.create=function(req,res)
                 let a={email:email,password:hash,name:name};
                 User.create(a,function(err,user){
                     if(err){console.log('Error in creating user --> sign up');return;}
+                    
+                    req.flash('success','Registered successfully!');
                     return res.redirect('/users/sign-in');
                 })
 
