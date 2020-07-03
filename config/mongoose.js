@@ -1,7 +1,7 @@
 const mongoose=require('mongoose');
 
 // connect mongoDB
-mongoose.connect('mongodb://localhost/gaggle');
+mongoose.connect('mongodb+srv://skb:skb123456789123456789skb@freecluster.7cdhk.mongodb.net/gaggleDB?retryWrites=true&w=majority');
 const db=mongoose.connection;
 
 // on error
