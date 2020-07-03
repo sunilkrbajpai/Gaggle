@@ -11,7 +11,7 @@ passport.use(new googleStrategy({
     // google auth credemntials
     clientID:process.env.CLIENT_ID,
     clientSecret:process.env.CLIENT_SECRET,
-    callbackURL:"http://localhost:8000/users/auth/google/callback",
+    callbackURL:"https://gaggle-skb.herokuapp.com/users/auth/google/callback",
 },
 function(accessToken,refreshToken,profile,done)
 {
